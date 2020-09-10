@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "UMD",
+        "moduleResolution": "node",
+        "noImplicitAny": true, // 在隐式any类型的表达式和声明上引发错误
+        "removeComments": false, // 删除所有以开头的版权标题标题注释除外的注释
+        "emitDeclarationOnly": true, // 仅生成“ .d.ts”声明文件。
+        "declaration": true, // 生成声明文件
+        "declarationDir": "types" // 声明文件路径
+    },
+    "include": ["src/*"]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@lllllxt/storage-idb-message",
+  "version": "1.0.0",
+  "description": "基于LocalStorage + IndexedDB 封装的消息传递的模块",
+  "main": "storage-idb-message.js",
+  "typings": "types/storage-idb-message.d.ts",
+  "scripts": {
+    "start": "npm run build && npm run uglify && npm run declaration",
+    "build": "rollup -c build/rollup.config.js -o storage-idb-message.js",
+    "uglify": "rollup -c build/rollup.config.js -o storage-idb-message.min.js --uglify",
+    "declaration": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lllllxt/storage-idb-message.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lllllxt/storage-idb-message/issues"
+  },
+  "homepage": "https://github.com/lllllxt/storage-idb-message#readme",
+  "author": "lllllxt",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^3.9.6"
+  },
+  "files": [
+    "types/",
+    "storage-idb-message.js",
+    "storage-idb-message.min.js"
+  ]
+}

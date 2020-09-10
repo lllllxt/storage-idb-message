@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" /> 回车发送
+    <div id="log">Message From Other Windows <br /></div>
+    <script src="../storage-idb-message.min.js"></script>
+    <script>
+      const aa = new StorageIdbMessage()
+      aa.response = (orderName, data) => {
+        document.querySelector('#log').innerHTML += orderName + ':' + data + '<br>'
+      }
+      document.querySelector('#input').onkeyup = function (e) {
+        if (e.code === 'Enter') {
+          aa.send('kill_bill', e.target.value)
+        }
+      }
+    </script>
+  </body>
+</html>
