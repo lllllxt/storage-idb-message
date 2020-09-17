@@ -41,10 +41,11 @@ _SIM.send(YourOrder, AnyData)
 
 #### 参数(Opts)
 
-| 参数       | 描述                                    |
-| ---------- | --------------------------------------- |
-| storageKey | 指令的 LocalStorage key 名称            |
-| clearIdb   | 是否在 response 后清除 IndexedDB 的数据 |
+| 参数       | 描述                                               |
+| ---------- | -------------------------------------------------- |
+| storageKey | 指令的 LocalStorage key 名称                       |
+| clearIdb   | 默认 true，是否在 response 后清除 IndexedDB 的数据 |
+| force      | 默认 false，调用 clearCache 清除缓存               |
 
 #### 方法
 
@@ -52,6 +53,12 @@ _SIM.send(YourOrder, AnyData)
 | ---------------------------------- | ------------------------ |
 | send(order: String, data: any)     | 发送                     |
 | response(order: String, data: any) | 响应其他页面传过来的指令 |
+
+#### 静态方法
+
+| 方法                                               | 描述                |
+| -------------------------------------------------- | ------------------- |
+| clearCache(successFn?: Function, errFn?: Function) | 清除 indexedDB 缓存 |
 
 ## License
 

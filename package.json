@@ -1,6 +1,6 @@
 {
   "name": "@lllllxt/storage-idb-message",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于LocalStorage + IndexedDB 封装的消息传递的模块",
   "main": "storage-idb-message.js",
   "typings": "types/storage-idb-message.d.ts",
@@ -22,9 +22,11 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.8.3",
+    "@rollup/plugin-commonjs": "^15.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "core-js": "^3.6.5",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",

@@ -2,9 +2,11 @@ import IDBOrder from './IDB_ORDER';
 declare class Opts {
     storageKey: string;
     clearIdb: boolean;
-    constructor({ storageKey, clearIdb }?: {
+    force: boolean;
+    constructor({ storageKey, clearIdb, force }?: {
         storageKey?: string;
         clearIdb?: boolean;
+        force?: boolean;
     });
 }
 declare class StorageIdbMessage {
@@ -13,5 +15,6 @@ declare class StorageIdbMessage {
     constructor(opts: Opts);
     send(order: String, data: any): void;
     response(order: String, data: any): void;
+    static clearCache(successFn?: Function, errFn?: Function): void;
 }
 export default StorageIdbMessage;

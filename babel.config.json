@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "targets": {
+          "browsers": "> 1%, IE 11, not dead"
+        }
+      }
+    ]
+  ],
+  "plugins": ["transform-class-properties"]
+}

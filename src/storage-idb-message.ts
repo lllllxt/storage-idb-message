@@ -1,20 +1,20 @@
 import IDBOrder from './IDB_ORDER'
-
 class Opts {
   storageKey: string
   clearIdb: boolean
-  constructor({ storageKey = 'StorageIdbMessageOrder', clearIdb = true } = {}) {
+  force: boolean
+  constructor({ storageKey = 'StorageIdbMessageOrder', clearIdb = true, force = false } = {}) {
     this.storageKey = storageKey
     this.clearIdb = clearIdb
+    this.force = force
   }
 }
 class StorageIdbMessage {
-  idb = new IDBOrder()
+  idb: IDBOrder
   STORAGE_KEY: string
   constructor(opts: Opts) {
-    const { storageKey, clearIdb } = new Opts(opts)
-    console.log(storageKey, clearIdb)
-
+    const { storageKey, clearIdb, force } = new Opts(opts)
+    this.idb = new IDBOrder(force)
     this.STORAGE_KEY = storageKey
     window.addEventListener('storage', (data) => {
       if (data.key === this.STORAGE_KEY) {
@@ -36,6 +36,10 @@ class StorageIdbMessage {
 
   response(order: String, data: any) {
     console.log(order, data)
+  }
+
+  static clearCache(successFn?: Function, errFn?: Function) {
+    IDBOrder.clearCache(successFn, errFn)
   }
 }
 export default StorageIdbMessage
